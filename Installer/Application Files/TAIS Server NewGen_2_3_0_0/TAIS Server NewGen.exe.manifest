@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="TAIS Server NewGen.exe" version="2.3.0.0" publicKeyToken="4a2003358e540285" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="Icons-Land-Vista-Hardware-Devices-Home-Server.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="TAIS Server NewGen" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="TAIS Server NewGen.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet version="1" class="System.Security.NamedPermissionSet" Name="LocalIntranet" Description="Default rights given to applications on the local intranet" Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC Manifest Options
+             If you want to change the Windows User Account Control level replace the 
+             requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            Specifying requestedExecutionLevel element will disable file and registry virtualization. 
+            Remove this element if your application requires this virtualization for backwards
+            compatibility.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.dll" size="5196496">
+      <assemblyIdentity name="EntityFramework" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>7W69dJBS+QGPZplnGuVGmt7fCGz4sb1CVrvpxOf2/wU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.SqlServer.dll" size="621264">
+      <assemblyIdentity name="EntityFramework.SqlServer" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>ob9snjgg6D9D6fIN19mwozYqkxRvCv4LEzAYXi1RsMs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TAIS Server NewGen.exe" size="1514944">
+      <assemblyIdentity name="TAIS Server NewGen" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>cJmU7sokWNmQiCXp+LuL8kPtwv5tdhFJ5uA5sJi3tj4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Icons-Land-Vista-Hardware-Devices-Home-Server.ico" size="432254">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>xh+iftqKqYulwlmA/jMKOegWhgCTJIF7GqVmFUBKHIw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Image\ellipsis.gif" size="41866">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ZUPyFnLAWuEPj9k10M0PfNHrBj+aBaxqY2L6Cdrzl24=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Image\rsz_duplicate.png" size="505">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>7JQGAVHr4JNXDYGvq4DmbGNlvHzkIriSU46TUIbG6zM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Image\rsz_tick_blank.png" size="409">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>VJvaBzFhSoEuUqUOmXTopaXkRLQpZhH2x3IPCkc5fYs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="TAIS Server NewGen.exe.config" size="3652">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Mq8kkIMe1FOAJ2wwqfXLAlDNd9HE4uw/s3+2DrkorQ4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="TAISEntity.Context.tt" size="22934">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>8MFRSWCYxyd/zLHybcmrm6JmqJwrI54u+sPu/ZXZt0k=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="TAISEntity.tt" size="25279">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Z39hgr+yXlfpkeAwE4PwGu/f7zkqBFo5goIDDyFFgjM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="TravComEntity.Context.tt" size="22937">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>oE1G4FBIG7FD2GL3fhvEGrqOmcf/NSchuO6Dc83WkBE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="TravComEntity.tt" size="25282">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>tuEAJuScuxzYrA4efI7adIenkRm7pDzEvW6HfUeUYxY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- A list of the Windows versions that this application has been tested on and is
+           is designed to work with. Uncomment the appropriate elements and Windows will 
+           automatically selected the most compatible environment. -->
+      <!-- Windows Vista -->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />-->
+      <!-- Windows 7 -->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />-->
+      <!-- Windows 8 -->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />-->
+      <!-- Windows 8.1 -->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />-->
+      <!-- Windows 10 -->
+      <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=PS-IT2\philscan" issuerKeyHash="9c94fea5db96c867e3b642d3eb880f8070648262" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>GsEes29m+0EzAp9BahZ/9wX/IkmgZVH1qTG9CxzU2IU=</DigestValue></Reference></SignedInfo><SignatureValue>GuCq/CdZHKjvAQUrm+7r1fw2vHLyqfG95vC1YYcWoMWOk/4Q+0giQ+jJ1YQ/ezsQF01HXkvZ/1xy5307Ym862MHTHX0YKH+kvRzO0N59iJcEm/EfujZjbUALHL9BP+RxRYxI29zNm7qI1WEq9tNknGTp4doLt22yK+4fcNfvJNA=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>pEhVGcvAqklKQ7nSnpS2d/fRfoEc6yIXW3TlzgvO+rl2uF5vhhBx1gLOG5jgbS84EGu95IJtGGMBYBV00b0OLp1S50jNGoSu0KWrHtAGkk4H5M88Tb0s0xw78aKKbzaa4GA5+jvmzJO69BiLkvrWSpz4UttHk68zRr3/ujlFsdE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="85d8d41c0bbd31a9f55165a04922ff05f77f166a419f023341fb666fb31ec11a" Description="" Url=""><as:assemblyIdentity name="TAIS Server NewGen.exe" version="2.3.0.0" publicKeyToken="4a2003358e540285" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=PS-IT2\philscan</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>B0TraJLl4ARBUePA7XMfMdyjcNYNVCzIVLn/51se8hU=</DigestValue></Reference></SignedInfo><SignatureValue>KuPj3fVlW+jLr1C5mJFjlDFffqYYU4hftDFiYSlTBmdOR5+riY7XV6BSvRNrZUOwg44eJNTOyufcuge2YSTvaz8KYCYHZeSmnlwV4FbEL42bojfVyK6Jo6C7FPhK/2yTaKCNWyTrlJ0wj3854931hcAz4k+IlHCr2ycfuCbsa78=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>pEhVGcvAqklKQ7nSnpS2d/fRfoEc6yIXW3TlzgvO+rl2uF5vhhBx1gLOG5jgbS84EGu95IJtGGMBYBV00b0OLp1S50jNGoSu0KWrHtAGkk4H5M88Tb0s0xw78aKKbzaa4GA5+jvmzJO69BiLkvrWSpz4UttHk68zRr3/ujlFsdE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB1TCCAT6gAwIBAgIQJDXsuKTmBIVOb4pjZ+VXqjANBgkqhkiG9w0BAQsFADApMScwJQYDVQQDHh4AUABTAC0ASQBUADIAXABwAGgAaQBsAHMAYwBhAG4wHhcNMTYwNTI1MDQxODA2WhcNMTcwNTI1MTAxODA2WjApMScwJQYDVQQDHh4AUABTAC0ASQBUADIAXABwAGgAaQBsAHMAYwBhAG4wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAKRIVRnLwKpJSkO50p6Utnf30X6BHOsiF1t05c4Lzvq5drheb4YQcdYCzhuY4G0vOBBrveSCbRhjAWAVdNG9Di6dUudIzRqErtClqx7QBpJOB+TPPE29LNMcO/Giim82muBgOfo75syTuvQYi5L61kqc+FLbR5OvM0a9/7o5RbHRAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAl/WqJOHime/fVwtrUNB8FrZOhja2dMib3Nn9v5vZjO3i9GTOIGMNWzWr3cs+Quiv2GSmChU+61C62poyA+gkxSqLj/kO3ePb9LM53LHgY5Rrig8E1siiS46JztmFDlXQafwzCzJwAvuKBZkQKOzbhQs/gxoIa5r6fOOoUJ0hA+Y=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
