@@ -63,6 +63,16 @@ namespace TAIS_Server_NewGen.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Double_Ring {
+            get {
+                object obj = ResourceManager.GetObject("Double_Ring", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ellipsis {
             get {
                 object obj = ResourceManager.GetObject("ellipsis", resourceCulture);

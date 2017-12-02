@@ -68,6 +68,37 @@ namespace TAIS_Server_NewGen.Class
                 "XP", "R3", "YC","YH", "Y8", "Y0","IY", "OE", "YT","4Y", "YY", "ZV","ZJ", "K8", "Q3","B4", "Z2", "3J"
             };
 
+        private void Decrypt (string _input, out string result)
+        {
+            result = "";
+
+            for(int ctr= 0; ctr < _input.Length; ctr++)
+            {
+                string temp = _input.Substring(ctr, 1);
+
+                if (temp == "J" || temp == "T")
+                    result += "0";
+                else if (temp == "I" || temp == "S")
+                    result += "1";
+                else if (temp == "H" || temp == "R")
+                    result += "2";
+                else if (temp == "G" || temp == "Q")
+                    result += "3";
+                else if (temp == "F" || temp == "P" || temp == "Z")
+                    result += "4";
+                else if (temp == "O" || temp == "Y")
+                    result += "5";
+                else if (temp == "D" || temp == "N" || temp == "X")
+                    result += "6";
+                else if (temp == "C" || temp == "M" || temp == "W")
+                    result += "7";
+                else if (temp == "B" || temp == "L" || temp == "V")
+                    result += "8";
+                else if (temp == "A" || temp == "K" || temp == "U")
+                    result += "9";
+            }
+        }
+
         public void ReadAirFile(FileInfo file, MainWindow mainWindow)
         {
             //Variables from first gen
@@ -126,7 +157,7 @@ namespace TAIS_Server_NewGen.Class
                         for (x = 0; x < temp.Count(); x++)
                         {
                             //Voided Air Files
-                            if (temp[x] == "MA")
+                            if (temp[x] == "MA" || temp[x].Contains("VOID"))
                             {
                                 List<string> ticketNumbers = new List<string>();
 
@@ -282,6 +313,15 @@ namespace TAIS_Server_NewGen.Class
                                 if (lines[xy].Contains("TKOK") ||
                                     lines[xy].Contains("TKTL"))
                                 {
+                                    if (lines[xy].Contains("TKOK"))
+                                    {
+                                        var tktDate = lines[xy].Substring(4, 5);
+
+                                        DateTime date = DateTime.Parse(tktDate);
+
+                                        streamWriter.WriteLine("RM*FF65/" + string.Format("{0:MM-dd-yy}", date));
+                                    }
+
                                     streamWriter.WriteLine("T-K" + Alines[ctr] + "-" +
                                         Tlines[ctr]);
 
@@ -290,6 +330,18 @@ namespace TAIS_Server_NewGen.Class
                                     streamWriter.WriteLine("RM*NA" + Alines[ctr] + "/PC1/V10000029");
 
                                     ctr++;
+                                }
+                                else if (lines[xy].Contains("RM*FOP/CC/"))
+                                {
+                                    string tempCC = lines[xy].Substring(10, lines[xy].Length - 17);
+
+                                    string decrpytedCC = "";
+
+                                    Decrypt(tempCC, out decrpytedCC);
+
+                                    var tempExpDate = lines[xy].Substring(lines[xy].Length - 7, 7);
+
+                                    streamWriter.WriteLine("RM*FOP/CC/" + decrpytedCC + tempExpDate);
                                 }
                                 else
                                     streamWriter.WriteLine(lines[xy]);
@@ -319,6 +371,18 @@ namespace TAIS_Server_NewGen.Class
                                 {
                                     if (lines[xy].Contains("H-"))
                                         streamWriter.WriteLine(lines[xy].Replace("H-", "U-"));
+                                    else if (lines[xy].Contains("RM*FOP/CC/"))
+                                    {
+                                        string tempCC = lines[xy].Substring(10, lines[xy].Length - 17);
+
+                                        string decrpytedCC = "";
+
+                                        Decrypt(tempCC, out decrpytedCC);
+
+                                        var tempExpDate = lines[xy].Substring(lines[xy].Length - 7, 7);
+
+                                        streamWriter.WriteLine("RM*FOP/CC/" + decrpytedCC + tempExpDate);
+                                    }
                                     else
                                         streamWriter.WriteLine(lines[xy]);
                                 }
@@ -355,6 +419,18 @@ namespace TAIS_Server_NewGen.Class
                                         ctr++;
                                     }
 
+                                }
+                                else if (lines[xy].Contains("RM*FOP/CC/"))
+                                {
+                                    string tempCC = lines[xy].Substring(10, lines[xy].Length - 17);
+
+                                    string decrpytedCC = "";
+
+                                    Decrypt(tempCC, out decrpytedCC);
+
+                                    var tempExpDate = lines[xy].Substring(lines[xy].Length - 7, 7);
+
+                                    streamWriter.WriteLine("RM*FOP/CC/" + decrpytedCC + tempExpDate);
                                 }
                                 else
                                     streamWriter.WriteLine(lines[xy]);
@@ -457,13 +533,30 @@ namespace TAIS_Server_NewGen.Class
 
                                         if (lines[xy].Contains("TKOK") || lines[xy].Contains("TKTL"))
                                         {
+                                            if (lines[xy].Contains("TKOK"))
+                                            {
+                                                var tktDate = lines[xy].Substring(4, 5);
+
+                                                DateTime date = DateTime.Parse(tktDate);
+
+                                                streamWriter.WriteLine("RM*FF65/" + string.Format("{0:MM-dd-yy}", date));
+                                            }
+
                                             streamWriter.WriteLine("RM*PC/0/10000001");
 
                                             ctr++;
                                         }
-                                        else if (lines[xy].Contains("RM*FOP"))
+                                        else if (lines[xy].Contains("RM*FOP/CC/"))
                                         {
+                                            string tempCC = lines[xy].Substring(10, lines[xy].Length - 17);
 
+                                            string decrpytedCC = "";
+
+                                            Decrypt(tempCC, out decrpytedCC);
+
+                                            var tempExpDate = lines[xy].Substring(lines[xy].Length - 7, 7);
+
+                                            streamWriter.WriteLine("RM*FOP/CC/" + decrpytedCC + tempExpDate);
                                         }
                                         else
                                             streamWriter.WriteLine(lines[xy]);
@@ -502,6 +595,15 @@ namespace TAIS_Server_NewGen.Class
 
                                     if (lines[xy].Contains("TKOK") || lines[xy].Contains("TKTL"))
                                     {
+                                        if (lines[xy].Contains("TKOK"))
+                                        {
+                                            var tktDate = lines[xy].Substring(4, 5);
+
+                                            DateTime date = DateTime.Parse(tktDate);
+
+                                            streamWriter.WriteLine("RM*FF65/" + string.Format("{0:MM-dd-yy}", date));
+                                        }
+
                                         streamWriter.WriteLine("RM*PC/0/10000001");
 
                                         ctr++;
@@ -521,6 +623,18 @@ namespace TAIS_Server_NewGen.Class
                                         lines[xy] = lines[xy].Replace("/" + segmentNoToBeRemove, "");
 
                                         streamWriter.WriteLine(lines[xy]);
+                                    }
+                                    else if (lines[xy].Contains("RM*FOP/CC/"))
+                                    {
+                                        string tempCC = lines[xy].Substring(10, lines[xy].Length - 17);
+
+                                        string decrpytedCC = "";
+
+                                        Decrypt(tempCC, out decrpytedCC);
+
+                                        var tempExpDate = lines[xy].Substring(lines[xy].Length - 7, 7);
+
+                                        streamWriter.WriteLine("RM*FOP/CC/" + decrpytedCC + tempExpDate);
                                     }
                                     else
                                     {

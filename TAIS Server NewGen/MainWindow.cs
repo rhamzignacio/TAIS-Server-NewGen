@@ -202,12 +202,15 @@ namespace TAIS_Server_NewGen
 
                     if (File.Exists(txtBoxAmadeusProcessedPath.Text + "\\" + amadeusAirFile.Name))
                         File.Delete(txtBoxAmadeusProcessedPath.Text + "\\" + amadeusAirFile.Name);
-
-                    File.Move(amadeusAirFile.FullName, txtBoxAmadeusProcessedPath.Text + "\\" + amadeusAirFile.Name);
+                    else
+                        File.Move(amadeusAirFile.FullName, txtBoxAmadeusProcessedPath.Text + "\\" + amadeusAirFile.Name);
                 }
-                    catch
+                catch
                 {
-                    File.Move(amadeusAirFile.FullName, txtBoxAmadeusErrorPath.Text + "\\" + amadeusAirFile.Name);
+                    if (File.Exists(txtBoxAmadeusProcessedPath.Text + "\\" + amadeusAirFile.Name))
+                        File.Delete(txtBoxAmadeusProcessedPath.Text + "\\" + amadeusAirFile.Name);
+                    else
+                        File.Move(amadeusAirFile.FullName, txtBoxAmadeusProcessedPath.Text + "\\" + amadeusAirFile.Name);
                 }
         }
 
@@ -235,12 +238,15 @@ namespace TAIS_Server_NewGen
 
                     if (File.Exists(txtBoxSabreProcessedPath.Text + "\\" + sabreAirFile.Name))
                         File.Delete(txtBoxSabreProcessedPath.Text + "\\" + sabreAirFile.Name);
-
-                    File.Move(sabreAirFile.FullName, txtBoxSabreProcessedPath.Text + "\\" + sabreAirFile.Name);
+                    else
+                        File.Move(sabreAirFile.FullName, txtBoxSabreProcessedPath.Text + "\\" + sabreAirFile.Name);
                 }
                 catch
                 {
-                    File.Move(sabreAirFile.FullName, txtBoxSabreErrorPath.Text + "\\" + sabreAirFile.Name);
+                    if (File.Exists(txtBoxSabreProcessedPath.Text + "\\" + sabreAirFile.Name))
+                        File.Delete(txtBoxSabreProcessedPath.Text + "\\" + sabreAirFile.Name);
+                    else
+                        File.Move(sabreAirFile.FullName, txtBoxSabreProcessedPath.Text + "\\" + sabreAirFile.Name);
                 }
             }
         }
@@ -259,12 +265,15 @@ namespace TAIS_Server_NewGen
 
                         if (File.Exists(txtBoxCebuPacificProcessedPath.Text + "\\" + cebuPacificAirFile.Name))
                             File.Delete(txtBoxCebuPacificProcessedPath.Text + "\\" + cebuPacificAirFile.Name);
-
-                        File.Move(cebuPacificAirFile.FullName, txtBoxCebuPacificProcessedPath.Text + "\\" + cebuPacificAirFile.Name);
+                        else
+                            File.Move(cebuPacificAirFile.FullName, txtBoxCebuPacificProcessedPath.Text + "\\" + cebuPacificAirFile.Name);
                     }
                     catch
                     {
-                        File.Move(cebuPacificAirFile.FullName, txtBoxCebuPacErrorPath.Text + "\\" + cebuPacificAirFile.Name);
+                        if (File.Exists(txtBoxCebuPacificProcessedPath.Text + "\\" + cebuPacificAirFile.Name))
+                            File.Delete(txtBoxCebuPacificProcessedPath.Text + "\\" + cebuPacificAirFile.Name);
+                        else
+                            File.Move(cebuPacificAirFile.FullName, txtBoxCebuPacificProcessedPath.Text + "\\" + cebuPacificAirFile.Name);
                     }
                 }
         }
@@ -276,7 +285,7 @@ namespace TAIS_Server_NewGen
 
             amadeusCTR++;
             
-            if(amadeusCTR == 10)
+            if(amadeusCTR == 50)
             {
                 amadeusCTR = 0;
 
@@ -431,6 +440,21 @@ namespace TAIS_Server_NewGen
             Properties.Settings.Default.CebuPacificErrorPath = txtBoxCebuPacErrorPath.Text;
 
             Properties.Settings.Default.Save();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label34_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBoxAmadeusProcessedPath_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -8,12 +8,12 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TAIS_Server_NewGen</RootNamespace>
-    <AssemblyName>TAIS Server NewGen</AssemblyName>
+    <AssemblyName>AIR Parser</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>C:\inetpub\wwwroot\TAIS Server\</PublishUrl>
+    <PublishUrl>T:\wwwroot\AIR Parser\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -23,14 +23,14 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://192.168.0.3:1009/</InstallUrl>
-    <ProductName>TAIS Server</ProductName>
+    <InstallUrl>http://192.168.0.47:2005/</InstallUrl>
+    <ProductName>AIR Parser</ProductName>
     <PublisherName>Philscan Travel and Tours</PublisherName>
-    <MinimumRequiredVersion>2.7.0.1</MinimumRequiredVersion>
+    <MinimumRequiredVersion>4.3.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>1</ApplicationRevision>
-    <ApplicationVersion>2.7.0.1</ApplicationVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>4.3.0.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -65,7 +65,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>701ADF2A89ABD5A6AAABB05FCBACD9B42074F7D7</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>576A2B5AAD513F7F16306FED5622A5D00A199A43</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -237,6 +237,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icons-Land-Vista-Hardware-Devices-Home-Server.ico" />
+    <Content Include="Image\Double Ring.gif" />
     <Content Include="Image\ellipsis.gif" />
     <Content Include="Image\rsz_duplicate.png" />
     <Content Include="Image\rsz_tick_blank.png" />
