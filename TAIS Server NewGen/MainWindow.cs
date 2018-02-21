@@ -92,6 +92,8 @@ namespace TAIS_Server_NewGen
             txtBoxSabreErrorPath.Text = Properties.Settings.Default.SabreErrorPath;
 
             txtBoxCebuPacErrorPath.Text = Properties.Settings.Default.CebuPacificErrorPath;
+
+            txtBoxAmadeusTemp.Text = Properties.Settings.Default.AmadeusTempPath;
         }
 
         private void MenuMove(MouseEventArgs e)
@@ -205,14 +207,18 @@ namespace TAIS_Server_NewGen
                     else
                         File.Move(amadeusAirFile.FullName, txtBoxAmadeusProcessedPath.Text + "\\" + amadeusAirFile.Name);
                 }
-                catch
+                catch (Exception error)
                 {
+                    MessageBox.Show(error.Message, "Error");
+
                     if (File.Exists(txtBoxAmadeusProcessedPath.Text + "\\" + amadeusAirFile.Name))
                         File.Delete(txtBoxAmadeusProcessedPath.Text + "\\" + amadeusAirFile.Name);
                     else
                         File.Move(amadeusAirFile.FullName, txtBoxAmadeusProcessedPath.Text + "\\" + amadeusAirFile.Name);
                 }
-        }
+
+                //ProcessAmadeus();
+            }
 
             Thread cebuPac = new Thread(new ThreadStart(ProcessCebuPac));
 
@@ -221,7 +227,30 @@ namespace TAIS_Server_NewGen
             Thread sabre = new Thread(new ThreadStart(ProcessSabre));
 
             sabre.Start();
-            
+
+            Thread amadeus = new Thread(new ThreadStart(ProcessAmadeus));
+
+            amadeus.Start();
+           
+        }
+
+        private void ProcessAmadeus()
+        {
+            try
+            {
+                DirectoryInfo tempDirectory = new DirectoryInfo(txtBoxAmadeusTemp.Text);
+
+                FileInfo[] tempFiles = tempDirectory.GetFiles("*.txt");
+
+                var temp = tempFiles.FirstOrDefault();
+
+                if (temp != null)
+                    File.Move(temp.FullName, txtBoxIATALocationPath.Text + "\\" + temp.Name);
+            }
+            catch(Exception error)
+            {
+               // MessageBox.Show(error.Message, "Error");
+            }
         }
 
         private void ProcessSabre()
@@ -243,10 +272,10 @@ namespace TAIS_Server_NewGen
                 }
                 catch
                 {
-                    if (File.Exists(txtBoxSabreProcessedPath.Text + "\\" + sabreAirFile.Name))
-                        File.Delete(txtBoxSabreProcessedPath.Text + "\\" + sabreAirFile.Name);
-                    else
-                        File.Move(sabreAirFile.FullName, txtBoxSabreProcessedPath.Text + "\\" + sabreAirFile.Name);
+                    //if (File.Exists(txtBoxSabreProcessedPath.Text + "\\" + sabreAirFile.Name))
+                    //    File.Delete(txtBoxSabreProcessedPath.Text + "\\" + sabreAirFile.Name);
+                    //else
+                    //    File.Move(sabreAirFile.FullName, txtBoxSabreProcessedPath.Text + "\\" + sabreAirFile.Name);
                 }
             }
         }
@@ -270,10 +299,10 @@ namespace TAIS_Server_NewGen
                     }
                     catch
                     {
-                        if (File.Exists(txtBoxCebuPacificProcessedPath.Text + "\\" + cebuPacificAirFile.Name))
-                            File.Delete(txtBoxCebuPacificProcessedPath.Text + "\\" + cebuPacificAirFile.Name);
-                        else
-                            File.Move(cebuPacificAirFile.FullName, txtBoxCebuPacificProcessedPath.Text + "\\" + cebuPacificAirFile.Name);
+                        //if (File.Exists(txtBoxCebuPacificProcessedPath.Text + "\\" + cebuPacificAirFile.Name))
+                        //    File.Delete(txtBoxCebuPacificProcessedPath.Text + "\\" + cebuPacificAirFile.Name);
+                        //else
+                        //    File.Move(cebuPacificAirFile.FullName, txtBoxCebuPacificProcessedPath.Text + "\\" + cebuPacificAirFile.Name);
                     }
                 }
         }
@@ -281,18 +310,22 @@ namespace TAIS_Server_NewGen
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            amadeusTimer.Stop();
+            //amadeusTimer.Stop();
 
-            amadeusCTR++;
+            //amadeusCTR++;
             
-            if(amadeusCTR == 50)
-            {
-                amadeusCTR = 0;
+            //if(amadeusCTR == 2)
+            //{
+            //    amadeusCTR = 0;
 
                 Process();
-            }
+            //}
 
-            amadeusTimer.Start();
+            //amadeusTimer.Start();
+
+            //amadeusTimer.Stop();
+
+            //amadeusTimer.Start();
         }
 
         private void btnCebuPacificSourcePath_Click(object sender, EventArgs e)
@@ -456,5 +489,16 @@ namespace TAIS_Server_NewGen
         {
 
         }
+
+        private void btnAmadeusTemp_Click(object sender, EventArgs e)
+        {
+            txtBoxAmadeusTemp.Text = SelectPath();
+
+            Properties.Settings.Default.AmadeusTempPath = txtBoxAmadeusTemp.Text;
+
+            Properties.Settings.Default.Save();
+        }
+
+        int ctr = 0;
     }
 }

@@ -569,9 +569,11 @@ namespace TAIS_Server_NewGen.Class
                         }//end of if
                         else
                         {
+                            //==============================IATA===========================
                             int ctr = 0;
 
-                            using (var streamWriter = File.CreateText(mainWindow.txtBoxIATALocationPath.Text + "\\" + file.Name))
+                            //using (var streamWriter = File.CreateText(mainWindow.txtBoxIATALocationPath.Text + "\\" + file.Name))
+                            using(var streamWriter = File.CreateText(mainWindow.txtBoxAmadeusTemp.Text + "\\" +file.Name))
                             {
                                 string netFare = "";
                                 string segmentNoToBeRemove = "";
@@ -642,10 +644,12 @@ namespace TAIS_Server_NewGen.Class
                                     }
                                 }
 
-                                streamWriter.WriteLine("ENDX");
+                                //streamWriter.WriteLine("ENDX");
 
                                 streamWriter.Close();
                             }//using
+
+                            //TransferTempFile(mainWindow);
                         }
                     }
 
@@ -658,6 +662,11 @@ namespace TAIS_Server_NewGen.Class
 
         //    }
 }//end of ReadAirFile function
+
+        private void TransferTempFile(MainWindow mainWindow)
+        {
+
+        }
 
         private bool CheckIfIASA(string _value)
         {

@@ -26,10 +26,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.amadeusTimer = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtBoxAmadeusTemp = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnAmadeusTemp = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.label47 = new System.Windows.Forms.Label();
             this.btnCebuPacificError = new System.Windows.Forms.Button();
@@ -127,6 +130,9 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.txtBoxAmadeusTemp);
+            this.tabPage1.Controls.Add(this.label10);
+            this.tabPage1.Controls.Add(this.btnAmadeusTemp);
             this.tabPage1.Controls.Add(this.pictureBox);
             this.tabPage1.Controls.Add(this.label47);
             this.tabPage1.Controls.Add(this.btnCebuPacificError);
@@ -196,17 +202,49 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(578, 316);
+            this.tabPage1.Size = new System.Drawing.Size(578, 320);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Settings";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // txtBoxAmadeusTemp
+            // 
+            this.txtBoxAmadeusTemp.BackColor = System.Drawing.Color.White;
+            this.txtBoxAmadeusTemp.Enabled = false;
+            this.txtBoxAmadeusTemp.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtBoxAmadeusTemp.Location = new System.Drawing.Point(196, 282);
+            this.txtBoxAmadeusTemp.Name = "txtBoxAmadeusTemp";
+            this.txtBoxAmadeusTemp.Size = new System.Drawing.Size(182, 20);
+            this.txtBoxAmadeusTemp.TabIndex = 65;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label10.Location = new System.Drawing.Point(198, 266);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(106, 13);
+            this.label10.TabIndex = 67;
+            this.label10.Text = "Temp Amadeus Path";
+            // 
+            // btnAmadeusTemp
+            // 
+            this.btnAmadeusTemp.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAmadeusTemp.FlatAppearance.BorderSize = 0;
+            this.btnAmadeusTemp.Location = new System.Drawing.Point(347, 258);
+            this.btnAmadeusTemp.Name = "btnAmadeusTemp";
+            this.btnAmadeusTemp.Size = new System.Drawing.Size(31, 20);
+            this.btnAmadeusTemp.TabIndex = 66;
+            this.btnAmadeusTemp.Text = ". . .";
+            this.btnAmadeusTemp.UseVisualStyleBackColor = false;
+            this.btnAmadeusTemp.Click += new System.EventHandler(this.btnAmadeusTemp_Click);
+            // 
             // pictureBox
             // 
             this.pictureBox.Image = global::TAIS_Server_NewGen.Properties.Resources.ellipsis;
-            this.pictureBox.Location = new System.Drawing.Point(541, 284);
+            this.pictureBox.Location = new System.Drawing.Point(539, 254);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(36, 31);
+            this.pictureBox.Size = new System.Drawing.Size(26, 22);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox.TabIndex = 43;
             this.pictureBox.TabStop = false;
@@ -729,9 +767,9 @@
             this.btnHide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(94)))), ((int)(((byte)(186)))));
             this.btnHide.FlatAppearance.BorderSize = 0;
             this.btnHide.ForeColor = System.Drawing.Color.White;
-            this.btnHide.Location = new System.Drawing.Point(288, 277);
+            this.btnHide.Location = new System.Drawing.Point(384, 254);
             this.btnHide.Name = "btnHide";
-            this.btnHide.Size = new System.Drawing.Size(82, 22);
+            this.btnHide.Size = new System.Drawing.Size(68, 22);
             this.btnHide.TabIndex = 20;
             this.btnHide.Text = "Hide";
             this.btnHide.UseVisualStyleBackColor = false;
@@ -743,9 +781,9 @@
             this.btnStop.Enabled = false;
             this.btnStop.FlatAppearance.BorderSize = 0;
             this.btnStop.ForeColor = System.Drawing.Color.Black;
-            this.btnStop.Location = new System.Drawing.Point(453, 277);
+            this.btnStop.Location = new System.Drawing.Point(455, 254);
             this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(82, 22);
+            this.btnStop.Size = new System.Drawing.Size(61, 22);
             this.btnStop.TabIndex = 19;
             this.btnStop.Text = "Stop";
             this.btnStop.UseVisualStyleBackColor = false;
@@ -755,9 +793,9 @@
             // 
             this.btnStart.BackColor = System.Drawing.Color.Lime;
             this.btnStart.FlatAppearance.BorderSize = 0;
-            this.btnStart.Location = new System.Drawing.Point(200, 277);
+            this.btnStart.Location = new System.Drawing.Point(384, 280);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(82, 22);
+            this.btnStart.Size = new System.Drawing.Size(182, 22);
             this.btnStart.TabIndex = 18;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = false;
@@ -905,7 +943,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(20, 3);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(586, 345);
+            this.tabControl1.Size = new System.Drawing.Size(586, 349);
             this.tabControl1.TabIndex = 9;
             // 
             // tabPage2
@@ -923,21 +961,21 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(578, 316);
+            this.tabPage2.Size = new System.Drawing.Size(578, 320);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Special Client Condition";
             // 
             // DGW1
             // 
             this.DGW1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGW1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGW1.DefaultCellStyle = dataGridViewCellStyle2;
             this.DGW1.Enabled = false;
             this.DGW1.Location = new System.Drawing.Point(11, 99);
             this.DGW1.Name = "DGW1";
@@ -1034,13 +1072,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(586, 345);
+            this.ClientSize = new System.Drawing.Size(586, 349);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AIR Parser 4.3";
+            this.Text = "AIR Parser 5.2";
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
@@ -1132,5 +1170,8 @@
         public System.Windows.Forms.ComboBox cmbBoxClient;
         public System.Windows.Forms.Label label8;
         public System.Windows.Forms.DataGridView DGW1;
+        public System.Windows.Forms.TextBox txtBoxAmadeusTemp;
+        public System.Windows.Forms.Label label10;
+        public System.Windows.Forms.Button btnAmadeusTemp;
     }
 }

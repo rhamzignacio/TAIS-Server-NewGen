@@ -214,5 +214,17 @@ namespace TAIS_Server_NewGen.Properties {
                 this["CebuPacificErrorPath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string AmadeusTempPath {
+            get {
+                return ((string)(this["AmadeusTempPath"]));
+            }
+            set {
+                this["AmadeusTempPath"] = value;
+            }
+        }
     }
 }
